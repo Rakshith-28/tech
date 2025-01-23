@@ -3,263 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Search System</title>
+    <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        h1 {
-            margin-top: 20px;
-            color: #fff;
-            font-size: 3rem;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            animation: glow 2s infinite alternate;
-        }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
 
-        @keyframes glow {
-            0% {
-                text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-            }
-            100% {
-                text-shadow: 2px 2px 15px rgba(255, 255, 255, 1);
-            }
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(5, 49, 96, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+}
 
-        .search-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            margin: 20px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
 
-        .search-container label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-            color: #555;
-        }
+nav ul li {
+    margin: 0 1rem;
+}
 
-        .search-container input, .search-container button {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+}
 
-        .search-container input {
-            transition: box-shadow 0.3s;
-        }
+.login a {
+    color: white;
+}
 
-        .search-container input:focus {
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
-            outline: none;
-        }
+h1 {
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(5, 49, 96, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        .search-container button {
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
 
-        .search-container button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
-        .suggestions {
-            position: absolute;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            width: 100%;
-            max-height: 150px;
-            overflow-y: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+.navbar ul li {
+    margin: 0 15px;
+}
 
-        .suggestions p {
-            margin: 0;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
 
-        .suggestions p:hover {
-            background-color: #f0f0f0;
-        }
+.navbar .user-section {
+    display: flex;
+    align-items: center;
+}
 
-        .results {
-            margin-top: 20px;
-            max-width: 500px;
-            width: 90%;
-        }
+.navbar .user-section span {
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+}
 
-        .flight {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.5s forwards ease-in-out;
-        }
+.navbar .logout-btn {
+    background-color: rgba(5, 49, 96, 0.8);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.content{
+    text-align: center;
+}
+.content h1{
+    font-size: 160px;
+    color: rgba(5, 49, 96, 0.8);
+    font-weight: 600;
+}
+.content h1:hover{
+    -webkit-text-stroke: 2px rgba(5, 49, 96, 0.8);
+    ;
+    color: transparent;
+    transition: 0.5s;
+}
+.content a{
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(5, 49, 96, 0.8);
+    font-size: 24px;
+    border: 2px solid rgb(7, 9, 56);
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height:auto;
+    }
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(5, 49, 96, 0.8);
+    color: #fff;
+  }
 
-        .search-container button:hover {
-            animation: pulse 1s infinite;
-        }
     </style>
 </head>
 <body>
-    <h1>Flight Search System</h1>
-    <div class="search-container">
-        <label for="departure">Departure City</label>
-        <input type="text" id="departure" placeholder="Enter departure city" oninput="showSuggestions('departure')" autocomplete="off">
-        <div class="suggestions" id="departure-suggestions"></div>
+    
+    <header class="navbar">
+        <div class="logo">AirXplore</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">My Flights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <div class="user-section">
+            <button class="logout-btn" onclick="window.location.href='login.html'">Logout</button>
+        </div>
+    </header> 
+    <div class="content">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+        <h1>AirXplore</h1>
+        <a href="flightSearch.html">Explore</a>
+   </div>  
+   <footer>
+    <p>Copyright © 2025 JetSetFly. All rights reserved.</p>
+</footer>
 
-        <label for="destination">Destination City</label>
-        <input type="text" id="destination" placeholder="Enter destination city" oninput="showSuggestions('destination')" autocomplete="off">
-        <div class="suggestions" id="destination-suggestions"></div>
-
-        <label for="date">Travel Date</label>
-        <input type="date" id="date">
-
-        <button onclick="searchFlights()">Search Flights</button>
-    </div>
-
-    <div class="results" id="results"></div>
-
-    <script>
-        // Flight data simulation using HashMap and PriorityQueue
-        class Flight {
-            constructor(flightNumber, departure, destination, date, time) {
-                this.flightNumber = flightNumber;
-                this.departure = departure;
-                this.destination = destination;
-                this.date = date;
-                this.time = time;
-            }
-        }
-
-        class FlightSystem {
-            constructor() {
-                this.flightMap = new Map();
-            }
-
-            addFlight(flight) {
-                const key = `${flight.departure}|${flight.destination}|${flight.date}`;
-                if (!this.flightMap.has(key)) {
-                    this.flightMap.set(key, []);
-                }
-                this.flightMap.get(key).push(flight);
-                // Sort flights by time (PriorityQueue simulation)
-                this.flightMap.get(key).sort((a, b) => a.time.localeCompare(b.time));
-            }
-
-            searchFlights(departure, destination, date) {
-                const key = `${departure}|${destination}|${date}`;
-                return this.flightMap.get(key) || [];
-            }
-        }
-
-        // Initialize flight system
-        const flightSystem = new FlightSystem();
-
-        // Adding sample flights
-        flightSystem.addFlight(new Flight("AI101", "Delhi", "Mumbai", "2025-01-20", "08:00"));
-        flightSystem.addFlight(new Flight("AI102", "Delhi", "Mumbai", "2025-01-20", "06:00"));
-        flightSystem.addFlight(new Flight("AI103", "Delhi", "Mumbai", "2025-01-20", "10:00"));
-        flightSystem.addFlight(new Flight("AI104", "Delhi", "Bangalore", "2025-01-20", "09:00"));
-
-        // List of cities for suggestions
-        const cities = ["Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune", "Ahmedabad"];
-
-        // Show suggestions for input fields
-        function showSuggestions(field) {
-            const input = document.getElementById(field).value.toLowerCase();
-            const suggestionsBox = document.getElementById(`${field}-suggestions`);
-            suggestionsBox.innerHTML = "";
-
-            if (input) {
-                const filteredCities = cities.filter(city => city.toLowerCase().includes(input));
-
-                filteredCities.forEach(city => {
-                    const suggestion = document.createElement("p");
-                    suggestion.textContent = city;
-                    suggestion.onclick = () => {
-                        document.getElementById(field).value = city;
-                        suggestionsBox.innerHTML = "";
-                    };
-                    suggestionsBox.appendChild(suggestion);
-                });
-            }
-        }
-
-        // Search Flights
-        function searchFlights() {
-            const departure = document.getElementById("departure").value;
-            const destination = document.getElementById("destination").value;
-            const date = document.getElementById("date").value;
-            const resultsContainer = document.getElementById("results");
-
-            // Clear previous results
-            resultsContainer.innerHTML = "";
-
-            // Fetch and display flights
-            const flights = flightSystem.searchFlights(departure, destination, date);
-
-            if (flights.length === 0) {
-                resultsContainer.innerHTML = "<p>No flights found.</p>";
-            } else {
-                flights.forEach(flight => {
-                    const flightDiv = document.createElement("div");
-                    flightDiv.className = "flight";
-                    flightDiv.innerHTML = `
-                        <p><strong>Flight Number:</strong> ${flight.flightNumber}</p>
-                        <p><strong>Departure:</strong> ${flight.departure}</p>
-                        <p><strong>Destination:</strong> ${flight.destination}</p>
-                        <p><strong>Date:</strong> ${flight.date}</p>
-                        <p><strong>Time:</strong> ${flight.time}</p>
-                    `;
-                    resultsContainer.appendChild(flightDiv);
-                });
-            }
-        }
-    </script>
 </body>
 </html>

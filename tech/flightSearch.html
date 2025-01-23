@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="styles2.css">  
     <title>AirXplore</title>  
+    <style>
+        /* General form styling */
+   
+
+    /* Result box styling */
+    .result-box {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        color: black;
+        max-width: 600px;
+    }
+
+    .result-box h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #054960;
+        text-align: center;
+    }
+
+    .result-box p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    </style>
 </head>  
 
 <body>  
@@ -29,16 +57,15 @@
 
     <main>
         <section class="booking-section">
-        <div class="hero">
-            <h1>Welcome to AirXplore</h1>
-            <h4>Your gateway to the skies.</h4>
-        </div>
+            <div class="hero">
+                <h1>Welcome to AirXplore</h1>
+                <h4>Your gateway to the skies.</h4>
+            </div>
         
-            <h2 style="color: rgba(5, 49, 96, 0.8);" >Search Flight</h2>
-            <form>
-                
+            <h2 style="color: rgba(5, 49, 96, 0.8);">Search Flight</h2>
+            <form id="flight-search-form">
                 <div class="form-group">
-                    <label for="from" >Departure :</label>
+                    <label for="from">Departure :</label>
                     <input type="text" id="from" placeholder="Dubai (DXB)">
                 </div>
                 <div class="form-group">
@@ -55,9 +82,12 @@
                 </div>
                 <button type="submit" class="search-btn">Search Flight(s)</button>
             </form>
-        </section>
         
-
+            <div id="search-results" class="result-box" style="display: none;">
+                <h3>Search Results</h3>
+                <p id="result-details"></p>
+            </div>
+        </section>
 
 
         
@@ -157,5 +187,39 @@
         <p>&copy; 2025 AirXplore</p>  
     </footer>  
 <script src="mainScript.js"></script>    
+<script>
+    const cityDetails = {
+        "Dubai (DXB)": "Dubai International Airport is one of the busiest in the world, located in Dubai, UAE.",
+        "Kochi (KOC)": "Cochin International Airport is in Kerala, India, and is known for its solar-powered operations.",
+        "New York (JFK)": "John F. Kennedy International Airport is a major hub in the United States.",
+        "London (LHR)": "Heathrow Airport is the primary international airport in London, UK.",
+        "Tokyo (HND)": "Haneda Airport is one of the two major airports serving Tokyo, Japan."
+    };
+
+    // Handle form submission
+    document.getElementById("flight-search-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const departure = document.getElementById("from").value.trim();
+        const arrival = document.getElementById("to").value.trim();
+
+        const departureDetails = cityDetails[departure];
+        const arrivalDetails = cityDetails[arrival];
+
+        const resultDetails = document.getElementById("result-details");
+        const searchResults = document.getElementById("search-results");
+
+        if (departureDetails || arrivalDetails) {
+            resultDetails.innerHTML = `
+                <strong>Departure:</strong> ${departureDetails || "No details available for this city."}<br>
+                <strong>Arrival:</strong> ${arrivalDetails || "No details available for this city."}
+            `;
+        } else {
+            resultDetails.innerHTML = "No details available for the searched cities.";
+        }
+
+        searchResults.style.display = "block";
+    });
+</script>
 </body>  
 </html>
