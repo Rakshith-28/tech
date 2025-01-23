@@ -1,0 +1,161 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="styles2.css">  
+    <title>AirXplore</title>  
+</head>  
+
+<body>  
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">AirXplore</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">My Flights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.css">Feedback</a></li>
+        </ul>
+        <div class="user-section">
+            <button class="logout-btn" onclick="window.location.href='login.html'">Logout</button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+
+    
+
+
+    <main>
+        <section class="booking-section">
+        <div class="hero">
+            <h1>Welcome to AirXplore</h1>
+            <h4>Your gateway to the skies.</h4>
+        </div>
+        
+            <h2 style="color: rgba(5, 49, 96, 0.8);" >Search Flight</h2>
+            <form>
+                
+                <div class="form-group">
+                    <label for="from" >Departure :</label>
+                    <input type="text" id="from" placeholder="Dubai (DXB)">
+                </div>
+                <div class="form-group">
+                    <label for="to">Arrival :</label>
+                    <input type="text" id="to" placeholder="Kochi (KOC)">
+                </div>
+                <div class="form-group">
+                    <label for="date">Departure Date :</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="passengers">Passengers :</label>
+                    <input type="number" id="passengers" placeholder="Number of passengers">
+                </div>
+                <button type="submit" class="search-btn">Search Flight(s)</button>
+            </form>
+        </section>
+        
+
+
+
+        
+        <!-- Services Section -->
+       <!-- Services Section -->
+       <section class="services">
+        <h2 class="services-heading">Our Services</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <h3>Tranquility</h3>
+                <p>Relax and unwind with premium seating and ambiance.</p>
+            </div>
+            <div class="service-item">
+                <h3>Elevate Your Experience</h3>
+                <p>Designed for discerning travelers, this exclusive lounge 
+                    offers premium amenities, assistance, and private workspaces.</p>
+            </div>
+            <div class="service-item">
+                <h3>A Welcoming Space</h3>
+                <p>Creating a family-friendly atmosphere, the Family Zone is the perfect haven
+                     for parents and children.</p>
+            </div>
+
+            <div class="service-item">
+                <h3>Exclusive Lounges</h3>
+                <p>Enjoy personalized services in premium lounges.</p>
+            </div>
+            <div class="service-item">
+                <h3>Family Zone</h3>
+                <p>Perfect for parents and kids to enjoy their time together.</p>
+            </div>
+            <div class="service-item">
+                <h3>Culinary Delights</h3>
+                <p>Savor gourmet meals and world-class cuisines.</p>
+            </div>
+            
+        </div>
+    </section>
+
+        <br>
+        <!-- Explore Places Section -->
+        <section class="slide">
+            <div style="background-color:rgba(5, 49, 96, 0.8);">
+                <h1 style="color: white;">Explore New Places</h1>
+            </div>   
+            <br>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="slide-group">
+                        <div class="place-card">
+                            <img src="NYC.jpg" alt="New York">
+                            <h2>New York</h2>
+                        </div>
+                        <div class="place-card">
+                            <img src="dubai.jpg" alt="Dubai">
+                            <h2>Dubai</h2>
+                        </div>
+                        <div class="place-card">
+                            <img src="singapore.jpg" alt="Singapore">
+                            <h2>Singapore</h2>
+                        </div>
+                        <div class="place-card">
+                            <img src="thailand.jpg" alt="Thailand">
+                            <h2>Thailand</h2>
+                        </div>
+                    </div>
+                    <div class="slide-group">
+                        <div class="place-card">
+                            <img src="tech/paris.jpg" alt="Paris">
+                            <h2>Paris</h2>
+                        </div>
+                        <div class="place-card">
+                            <img src="tech/london.jpg" alt="London">
+                            <h2>London</h2>
+                        </div>
+                        <div class="place-card">
+                            <img src="tech/tokyo.jpg" alt="Tokyo">
+                            <h2>Tokyo</h2>
+                        </div>
+                        <div class="place-card">
+                            <img src="tech/sydney.jpg" alt="Sydney">
+                            <h2>Sydney</h2>
+                        </div>
+                    </div>
+                </div>
+                <button class="prev" onclick="slide(-1)">&#10094;</button>
+                <button class="next" onclick="slide(1)">&#10095;</button>
+            </div>
+        </section>
+        
+        
+    </main>
+    <br>
+    
+    <!-- Footer -->
+    <footer>  
+        <p>&copy; 2025 AirXplore</p>  
+    </footer>  
+<script src="mainScript.js"></script>    
+</body>  
+</html>

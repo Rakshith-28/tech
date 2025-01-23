@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .navbar {
+          position: absolute;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color:  rgba(5, 49, 96, 0.8);
+          color: #fff;
+          z-index: 1000; 
+          padding: 10px 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          top: 0;
+          left: 0;
+          width: 100%;
+      }
+        .navbar .logo {
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
+        }
+    
+        .navbar ul {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+        }
+    
+        .navbar ul li {
+          margin: 0 15px;
+        }
+    
+        .navbar ul li a {
+          text-decoration: none;
+          color: white;
+          font-size: 16px;
+        }
+    
+        .navbar .user-section {
+          display: flex;
+          align-items: center;
+        }
+    
+        .navbar .user-section span {
+          margin-right: 10px;
+          font-weight: bold;
+          color: rgba(5, 49, 96, 0.8);
+        }
+    
+
+      body{
+        font-family: Arial, sans-serif;
+        background: url('3482571.webp') no-repeat center center fixed;
+        background-size: cover; /* Ensures the image covers the whole page */
+        color: #333;
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers content vertically */
+        align-items: center; /* Centers content horizontally */
+      }
+  
+      .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px; /* Space between Login and Register sections */
+      }
+  
+      .login,.register{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(5, 49, 96, 0.8);
+        width: 300px;
+        text-align: center;
+      }
+  
+      .login h2,.register h2{
+        margin-bottom: 20px;
+      }
+  
+      .form-group{
+        margin-bottom: 15px;
+        text-align: left;
+      }
+  
+      .form-group label{
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      .form-group input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button{
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(5, 49, 96, 0.8);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      button:hover{
+        background-color: rgba(1, 27, 56, 0.8);
+        transition: all 0.3s ease;
+      }
+  
+      footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(5, 49, 96, 0.8);
+        color: #fff;
+      }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AirXplore</div>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">My Flights</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <div class="user-section">
+          
+        </div>
+      </header>
+
+    <main>
+        <div class="container">
+            <!-- Login Section -->
+            <div class="login">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <!-- Register Section -->
+            <div class="register">
+                <h2>Don't Have An Account Yet?</h2>
+                <p>Book flights, manage reservations, and explore the world with us.</p>
+                <button type="button" onclick="window.location.href='register.html'">Register</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2025 JetSetFly. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const userDetails = JSON.parse(localStorage.getItem(email));
+
+            if (userDetails && userDetails.password === password) {
+                alert(`Welcome back, ${userDetails.firstName}!`);
+                window.location.href='flightSearch.html';
+            } else {
+                alert("Invalid email or password.");
+            }
+        });
+    </script>
+</body>
+</html>

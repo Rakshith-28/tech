@@ -1,0 +1,59 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="feedback.css">  
+    <title>Feedback Form</title>  
+</head>  
+<body>  
+    <header class="navbar">
+        <div class="logo">AirXplore</div>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">My Flights</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <div class="user-section">  
+        </div>
+      </header>
+      <main>   
+    <div class="container">  
+        <h1>Feedback Form</h1>  
+        <form id="feedback-form">  
+            <label for="impression">What was your first impression when you entered the website?</label>  
+            <textarea id="impression" rows="4" required></textarea>  
+
+            <label for="source">How did you first hear about us?</label>  
+            <select id="source" required>  
+                <option value="">Select an option</option>  
+                <option value="social">Social Media</option>  
+                <option value="friend">Friend / Family</option>  
+                <option value="search">Search Engine</option>  
+                <option value="advertisement">Advertisement</option>  
+            </select>  
+
+            <label for="missing">Is there anything missing on this page?</label>  
+            <textarea id="missing" rows="4"></textarea>  
+
+            <label>Rate Your Experience:</label>  
+            <div class="stars">  
+                <input type="radio" name="rating" value="5" id="star1"><label for="star1">★</label>  
+                <input type="radio" name="rating" value="4" id="star2"><label for="star2">★</label>  
+                <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>  
+                <input type="radio" name="rating" value="2" id="star4"><label for="star4">★</label>  
+                <input type="radio" name="rating" value="1" id="star5"><label for="star5">★</label>  
+            </div>
+            
+
+            <button type="submit">Submit</button>  
+        </form>  
+    </div> 
+      </main>
+      <br>
+      <footer>
+        <p>Copyright © 2025 JetSetFly. All rights reserved.</p>
+      </footer> 
+</body>  
+</html>

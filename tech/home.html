@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(5, 49, 96, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.login a {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(5, 49, 96, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.navbar .user-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .user-section span {
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .logout-btn {
+    background-color: rgba(5, 49, 96, 0.8);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content{
+    text-align: center;
+}
+.content h1{
+    font-size: 160px;
+    color: rgba(5, 49, 96, 0.8);
+    font-weight: 600;
+}
+.content h1:hover{
+    -webkit-text-stroke: 2px rgba(5, 49, 96, 0.8);
+    ;
+    color: transparent;
+    transition: 0.5s;
+}
+.content a{
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(5, 49, 96, 0.8);
+    font-size: 24px;
+    border: 2px solid rgb(7, 9, 56);
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height:auto;
+    }
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(5, 49, 96, 0.8);
+    color: #fff;
+  }
+
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">AirXplore</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">My Flights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <div class="user-section">
+            <button class="logout-btn" onclick="window.location.href='login.html'">Logout</button>
+        </div>
+    </header> 
+    <div class="content">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+        <h1>AirXplore</h1>
+        <a href="flightSearch.html">Explore</a>
+   </div>  
+   <footer>
+    <p>Copyright © 2025 JetSetFly. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

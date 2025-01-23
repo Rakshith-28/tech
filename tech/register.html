@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('BgRegiPic.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(5, 49, 96, 0.8);
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffccbc;
+        }
+
+        /* Form Container */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 550px;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: rgba(5, 49, 96, 0.8);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Form Input Styles */
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            width: 48%;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            color: rgba(5, 49, 96, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: rgba(5, 49, 96, 0.8);
+            outline: none;
+            box-shadow: 0 0 5px rgba(81, 104, 234, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        .back-btn {
+            background: rgba(5, 49, 96, 0.8);
+            color: white;
+        }
+
+        .register-btn {
+            background: rgba(5, 49, 96, 0.8);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(5, 49, 96, 0.8);
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">JETSETFLY</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container">
+        <div class="form">
+            <h1 class="form-title">REGISTER</h1>
+            <form id="registerForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="title">Title</label>
+                        <select id="title" name="title">
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                            <option>Miss</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="text" id="mobile" name="mobile" placeholder="Enter Mobile Number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn back-btn" onclick="window.location.href='login.html'">Back</button>
+                    <button type="submit" class="btn register-btn">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2025 Team SHARE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Save user details in Local Storage
+            const userDetails = { email, firstName, lastName, password };
+            localStorage.setItem(email, JSON.stringify(userDetails));
+
+            alert("Registration successful!");
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
